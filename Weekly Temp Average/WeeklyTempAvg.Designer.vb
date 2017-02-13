@@ -46,7 +46,7 @@ Partial Class WeeklyTempAvg
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(36, 43)
+        Me.Label1.Location = New System.Drawing.Point(66, 43)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 16)
         Me.Label1.TabIndex = 0
@@ -55,7 +55,7 @@ Partial Class WeeklyTempAvg
         'TempOneInput
         '
         Me.TempOneInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempOneInput.Location = New System.Drawing.Point(123, 40)
+        Me.TempOneInput.Location = New System.Drawing.Point(153, 40)
         Me.TempOneInput.Name = "TempOneInput"
         Me.TempOneInput.Size = New System.Drawing.Size(100, 22)
         Me.TempOneInput.TabIndex = 1
@@ -63,7 +63,7 @@ Partial Class WeeklyTempAvg
         'TempTwoInput
         '
         Me.TempTwoInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempTwoInput.Location = New System.Drawing.Point(123, 68)
+        Me.TempTwoInput.Location = New System.Drawing.Point(153, 68)
         Me.TempTwoInput.Name = "TempTwoInput"
         Me.TempTwoInput.Size = New System.Drawing.Size(100, 22)
         Me.TempTwoInput.TabIndex = 3
@@ -72,7 +72,7 @@ Partial Class WeeklyTempAvg
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(36, 71)
+        Me.Label2.Location = New System.Drawing.Point(66, 71)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 16)
         Me.Label2.TabIndex = 2
@@ -81,7 +81,7 @@ Partial Class WeeklyTempAvg
         'TempThreeInput
         '
         Me.TempThreeInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempThreeInput.Location = New System.Drawing.Point(123, 96)
+        Me.TempThreeInput.Location = New System.Drawing.Point(153, 96)
         Me.TempThreeInput.Name = "TempThreeInput"
         Me.TempThreeInput.Size = New System.Drawing.Size(100, 22)
         Me.TempThreeInput.TabIndex = 5
@@ -90,7 +90,7 @@ Partial Class WeeklyTempAvg
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(36, 99)
+        Me.Label3.Location = New System.Drawing.Point(66, 99)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(68, 16)
         Me.Label3.TabIndex = 4
@@ -99,7 +99,7 @@ Partial Class WeeklyTempAvg
         'TempFourInput
         '
         Me.TempFourInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempFourInput.Location = New System.Drawing.Point(123, 124)
+        Me.TempFourInput.Location = New System.Drawing.Point(153, 124)
         Me.TempFourInput.Name = "TempFourInput"
         Me.TempFourInput.Size = New System.Drawing.Size(100, 22)
         Me.TempFourInput.TabIndex = 7
@@ -108,7 +108,7 @@ Partial Class WeeklyTempAvg
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(36, 127)
+        Me.Label4.Location = New System.Drawing.Point(66, 127)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 16)
         Me.Label4.TabIndex = 6
@@ -117,7 +117,7 @@ Partial Class WeeklyTempAvg
         'TempFiveInput
         '
         Me.TempFiveInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempFiveInput.Location = New System.Drawing.Point(123, 152)
+        Me.TempFiveInput.Location = New System.Drawing.Point(153, 152)
         Me.TempFiveInput.Name = "TempFiveInput"
         Me.TempFiveInput.Size = New System.Drawing.Size(100, 22)
         Me.TempFiveInput.TabIndex = 9
@@ -126,7 +126,7 @@ Partial Class WeeklyTempAvg
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(36, 155)
+        Me.Label5.Location = New System.Drawing.Point(66, 155)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(68, 16)
         Me.Label5.TabIndex = 8
@@ -136,7 +136,7 @@ Partial Class WeeklyTempAvg
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(36, 190)
+        Me.Label6.Location = New System.Drawing.Point(66, 190)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(67, 16)
         Me.Label6.TabIndex = 10
@@ -146,7 +146,7 @@ Partial Class WeeklyTempAvg
         '
         Me.AverageTempOutput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.AverageTempOutput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AverageTempOutput.Location = New System.Drawing.Point(123, 189)
+        Me.AverageTempOutput.Location = New System.Drawing.Point(153, 189)
         Me.AverageTempOutput.Name = "AverageTempOutput"
         Me.AverageTempOutput.Size = New System.Drawing.Size(100, 23)
         Me.AverageTempOutput.TabIndex = 11
@@ -195,7 +195,7 @@ Partial Class WeeklyTempAvg
         Me.Status.Name = "Status"
         Me.Status.Size = New System.Drawing.Size(0, 17)
         '
-        'Form1
+        'WeeklyTempAvg
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -216,7 +216,7 @@ Partial Class WeeklyTempAvg
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TempOneInput)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "Form1"
+        Me.Name = "WeeklyTempAvg"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Weekly Temperature Average"
         Me.StatusStrip1.ResumeLayout(False)
