@@ -23,17 +23,17 @@ Partial Class WeeklyTempAvg
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TempOneInput = New System.Windows.Forms.TextBox()
-        Me.TempTwoInput = New System.Windows.Forms.TextBox()
+        Me.TemperatureOneInput = New System.Windows.Forms.TextBox()
+        Me.TemperatureTwoInput = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TempThreeInput = New System.Windows.Forms.TextBox()
+        Me.TemperatureThreeInput = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TempFourInput = New System.Windows.Forms.TextBox()
+        Me.TemperatureFourInput = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TempFiveInput = New System.Windows.Forms.TextBox()
+        Me.TemperatureFiveInput = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.AverageTempOutput = New System.Windows.Forms.Label()
+        Me.AverageTemperatureOutput = New System.Windows.Forms.Label()
         Me.CalcAvgButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
@@ -52,21 +52,21 @@ Partial Class WeeklyTempAvg
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Week #1"
         '
-        'TempOneInput
+        'TemperatureOneInput
         '
-        Me.TempOneInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempOneInput.Location = New System.Drawing.Point(153, 40)
-        Me.TempOneInput.Name = "TempOneInput"
-        Me.TempOneInput.Size = New System.Drawing.Size(100, 22)
-        Me.TempOneInput.TabIndex = 1
+        Me.TemperatureOneInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TemperatureOneInput.Location = New System.Drawing.Point(153, 40)
+        Me.TemperatureOneInput.Name = "TemperatureOneInput"
+        Me.TemperatureOneInput.Size = New System.Drawing.Size(100, 22)
+        Me.TemperatureOneInput.TabIndex = 1
         '
-        'TempTwoInput
+        'TemperatureTwoInput
         '
-        Me.TempTwoInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempTwoInput.Location = New System.Drawing.Point(153, 68)
-        Me.TempTwoInput.Name = "TempTwoInput"
-        Me.TempTwoInput.Size = New System.Drawing.Size(100, 22)
-        Me.TempTwoInput.TabIndex = 3
+        Me.TemperatureTwoInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TemperatureTwoInput.Location = New System.Drawing.Point(153, 68)
+        Me.TemperatureTwoInput.Name = "TemperatureTwoInput"
+        Me.TemperatureTwoInput.Size = New System.Drawing.Size(100, 22)
+        Me.TemperatureTwoInput.TabIndex = 3
         '
         'Label2
         '
@@ -78,13 +78,13 @@ Partial Class WeeklyTempAvg
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Week #2"
         '
-        'TempThreeInput
+        'TemperatureThreeInput
         '
-        Me.TempThreeInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempThreeInput.Location = New System.Drawing.Point(153, 96)
-        Me.TempThreeInput.Name = "TempThreeInput"
-        Me.TempThreeInput.Size = New System.Drawing.Size(100, 22)
-        Me.TempThreeInput.TabIndex = 5
+        Me.TemperatureThreeInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TemperatureThreeInput.Location = New System.Drawing.Point(153, 96)
+        Me.TemperatureThreeInput.Name = "TemperatureThreeInput"
+        Me.TemperatureThreeInput.Size = New System.Drawing.Size(100, 22)
+        Me.TemperatureThreeInput.TabIndex = 5
         '
         'Label3
         '
@@ -96,13 +96,13 @@ Partial Class WeeklyTempAvg
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Week #3"
         '
-        'TempFourInput
+        'TemperatureFourInput
         '
-        Me.TempFourInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempFourInput.Location = New System.Drawing.Point(153, 124)
-        Me.TempFourInput.Name = "TempFourInput"
-        Me.TempFourInput.Size = New System.Drawing.Size(100, 22)
-        Me.TempFourInput.TabIndex = 7
+        Me.TemperatureFourInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TemperatureFourInput.Location = New System.Drawing.Point(153, 124)
+        Me.TemperatureFourInput.Name = "TemperatureFourInput"
+        Me.TemperatureFourInput.Size = New System.Drawing.Size(100, 22)
+        Me.TemperatureFourInput.TabIndex = 7
         '
         'Label4
         '
@@ -114,13 +114,13 @@ Partial Class WeeklyTempAvg
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Week #4"
         '
-        'TempFiveInput
+        'TemperatureFiveInput
         '
-        Me.TempFiveInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TempFiveInput.Location = New System.Drawing.Point(153, 152)
-        Me.TempFiveInput.Name = "TempFiveInput"
-        Me.TempFiveInput.Size = New System.Drawing.Size(100, 22)
-        Me.TempFiveInput.TabIndex = 9
+        Me.TemperatureFiveInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TemperatureFiveInput.Location = New System.Drawing.Point(153, 152)
+        Me.TemperatureFiveInput.Name = "TemperatureFiveInput"
+        Me.TemperatureFiveInput.Size = New System.Drawing.Size(100, 22)
+        Me.TemperatureFiveInput.TabIndex = 9
         '
         'Label5
         '
@@ -142,14 +142,14 @@ Partial Class WeeklyTempAvg
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Average"
         '
-        'AverageTempOutput
+        'AverageTemperatureOutput
         '
-        Me.AverageTempOutput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.AverageTempOutput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AverageTempOutput.Location = New System.Drawing.Point(153, 189)
-        Me.AverageTempOutput.Name = "AverageTempOutput"
-        Me.AverageTempOutput.Size = New System.Drawing.Size(100, 23)
-        Me.AverageTempOutput.TabIndex = 11
+        Me.AverageTemperatureOutput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.AverageTemperatureOutput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AverageTemperatureOutput.Location = New System.Drawing.Point(153, 189)
+        Me.AverageTemperatureOutput.Name = "AverageTemperatureOutput"
+        Me.AverageTemperatureOutput.Size = New System.Drawing.Size(100, 23)
+        Me.AverageTemperatureOutput.TabIndex = 11
         '
         'CalcAvgButton
         '
@@ -204,17 +204,17 @@ Partial Class WeeklyTempAvg
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.CalcAvgButton)
-        Me.Controls.Add(Me.AverageTempOutput)
+        Me.Controls.Add(Me.AverageTemperatureOutput)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TempFiveInput)
+        Me.Controls.Add(Me.TemperatureFiveInput)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TempFourInput)
+        Me.Controls.Add(Me.TemperatureFourInput)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TempThreeInput)
+        Me.Controls.Add(Me.TemperatureThreeInput)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TempTwoInput)
+        Me.Controls.Add(Me.TemperatureTwoInput)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TempOneInput)
+        Me.Controls.Add(Me.TemperatureOneInput)
         Me.Controls.Add(Me.Label1)
         Me.Name = "WeeklyTempAvg"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -226,17 +226,17 @@ Partial Class WeeklyTempAvg
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TempOneInput As System.Windows.Forms.TextBox
-    Friend WithEvents TempTwoInput As System.Windows.Forms.TextBox
+    Friend WithEvents TemperatureOneInput As System.Windows.Forms.TextBox
+    Friend WithEvents TemperatureTwoInput As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TempThreeInput As System.Windows.Forms.TextBox
+    Friend WithEvents TemperatureThreeInput As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TempFourInput As System.Windows.Forms.TextBox
+    Friend WithEvents TemperatureFourInput As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents TempFiveInput As System.Windows.Forms.TextBox
+    Friend WithEvents TemperatureFiveInput As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents AverageTempOutput As System.Windows.Forms.Label
+    Friend WithEvents AverageTemperatureOutput As System.Windows.Forms.Label
     Friend WithEvents CalcAvgButton As System.Windows.Forms.Button
     Friend WithEvents ClearButton As System.Windows.Forms.Button
     Friend WithEvents ExitButton As System.Windows.Forms.Button
