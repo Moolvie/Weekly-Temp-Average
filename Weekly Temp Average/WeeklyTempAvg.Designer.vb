@@ -183,6 +183,7 @@ Partial Class WeeklyTempAvg
         '
         'StatusStrip1
         '
+        Me.StatusStrip1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Status})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 291)
         Me.StatusStrip1.Name = "StatusStrip1"

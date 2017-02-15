@@ -45,7 +45,7 @@
                                 Status.Text = String.Empty ' clear any error in the status bar
                                 'week four start
                                 If Single.TryParse(TemperatureFourInput.Text, WeekTemperatureFour) Then
-                                    If WeekTemperatureOne < -50 Or WeekTemperatureOne > 130 Then
+                                    If WeekTemperatureFour < -50 Or WeekTemperatureFour > 130 Then
                                         Status.Text = "Temperature out of range in Week #1"
                                         TemperatureFourInput.Focus()
                                         TemperatureFourInput.SelectionStart = 0
