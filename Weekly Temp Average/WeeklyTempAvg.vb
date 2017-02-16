@@ -2,6 +2,11 @@
     Private Sub CalcAvgButton_Click(sender As Object, e As EventArgs) Handles CalcAvgButton.Click
         ' Declare the constant for averaging. we are averaging five weekly temperatures
         Const NUMBER_OF_TEMPERATURES As Integer = 5
+        ' Declare the constant for low limit
+        Const LOW_LIMIT As Single = -50.0
+        ' Declare the constant for high limit
+        Const HIGH_LIMIT As Single = 130.0
+
 
         ' Declare the variables
         Dim WeekTemperatureOne As Single = 0.0
@@ -11,18 +16,19 @@
         Dim WeekTemperatureFive As Single = 0.0
         Dim WeekAverageTemperature As Single = 0.0
 
-        ' define myError 
+        ' define myError for each week
         Dim myError1 As Boolean = False
         Dim myError2 As Boolean = False
         Dim myError3 As Boolean = False
         Dim myError4 As Boolean = False
         Dim myError5 As Boolean = False
 
-        myError1 = ValidateInput(TemperatureOneInput, WeekTemperatureOne, WeekAverageTemperature)
-        myError2 = ValidateInput(TemperatureTwoInput, WeekTemperatureTwo, WeekAverageTemperature)
-        myError3 = ValidateInput(TemperatureThreeInput, WeekTemperatureThree, WeekAverageTemperature)
-        myError4 = ValidateInput(TemperatureFourInput, WeekTemperatureFour, WeekAverageTemperature)
-        myError5 = ValidateInput(TemperatureFiveInput, WeekTemperatureFive, WeekAverageTemperature)
+        ' call the function for each week
+        myError1 = ValidateInput(TemperatureOneInput, WeekTemperatureOne, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
+        myError2 = ValidateInput(TemperatureTwoInput, WeekTemperatureTwo, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
+        myError3 = ValidateInput(TemperatureThreeInput, WeekTemperatureThree, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
+        myError4 = ValidateInput(TemperatureFourInput, WeekTemperatureFour, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
+        myError5 = ValidateInput(TemperatureFiveInput, WeekTemperatureFive, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
 
         If Not myError1 And Not myError2 And Not myError3 And Not myError4 And Not myError5 Then
             WeekAverageTemperature = WeekAverageTemperature / NUMBER_OF_TEMPERATURES
@@ -57,7 +63,7 @@
         TemperatureOneInput.Focus()
     End Sub
 
-    Private Function ValidateInput(ByVal inputTemperature As TextBox, ByVal ThisWeeksTemperature As Single, ByRef WeekAverageTemperature As Single) As Boolean
+    Private Function ValidateInput(ByVal inputTemperature As TextBox, ByVal ThisWeeksTemperature As Single, ByVal high As Single, ByVal low As Single, ByRef WeekAverageTemperature As Single) As Boolean
 
         ' Clear previous errors
         ErrorProvider1.SetError(inputTemperature, String.Empty)
@@ -66,8 +72,8 @@
 
         ' validate input, must be a number between -50 and 130
         If Single.TryParse(inputTemperature.Text, ThisWeeksTemperature) Then
-            If ThisWeeksTemperature < -50 Or ThisWeeksTemperature > 130 Then
-                ErrorProvider1.SetError(inputTemperature, "Temperture must be between -50 and 130.")
+            If ThisWeeksTemperature < low Or ThisWeeksTemperature > high Then
+                ErrorProvider1.SetError(inputTemperature, "Temperture must be between" + low.ToString() + " and " + high.ToString() + ".")
                 inputTemperature.Focus()
                 inputTemperature.SelectionStart = 0
                 inputTemperature.SelectionLength = TemperatureOneInput.Text.Length
