@@ -58,11 +58,13 @@
     End Sub
 
     Private Function ValidateInput(ByVal inputTemperature As TextBox, ByVal ThisWeeksTemperature As Single, ByRef WeekAverageTemperature As Single) As Boolean
-        ' convert inputs to double
+
         ' Clear previous errors
         ErrorProvider1.SetError(inputTemperature, String.Empty)
+        ' set return value to false
         Dim foundError As Boolean = False
 
+        ' validate input, must be a number between -50 and 130
         If Single.TryParse(inputTemperature.Text, ThisWeeksTemperature) Then
             If ThisWeeksTemperature < -50 Or ThisWeeksTemperature > 130 Then
                 ErrorProvider1.SetError(inputTemperature, "Temperture must be between -50 and 130.")
@@ -70,14 +72,15 @@
                 inputTemperature.SelectionStart = 0
                 inputTemperature.SelectionLength = TemperatureOneInput.Text.Length
                 foundError = True
-                Return foundError
+                Return foundError ' return an error if not in range
             Else
+                ' input is correct so add to accumulator
                 WeekAverageTemperature = WeekAverageTemperature + ThisWeeksTemperature
-            End If ' end of week 1
+            End If ' end inner if
         Else
             ErrorProvider1.SetError(inputTemperature, "You must input a numeric value.")
             foundError = True
-            Return foundError
-        End If
+            Return foundError ' return an error if not a number
+        End If 'end outer if
     End Function
 End Class
