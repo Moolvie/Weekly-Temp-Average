@@ -1,6 +1,4 @@
 ﻿Public Class WeeklyTempAvg
-
-
     Private Sub CalcAvgButton_Click(sender As Object, e As EventArgs) Handles CalcAvgButton.Click
         ' Declare the constant for averaging. we are averaging five weekly temperatures
         Const NUMBER_OF_TEMPERATURES As Integer = 5
@@ -13,115 +11,23 @@
         Dim WeekTemperatureFive As Single = 0.0
         Dim WeekAverageTemperature As Single = 0.0
 
-        ' convert inputs to double
-        If Single.TryParse(TemperatureOneInput.Text, WeekTemperatureOne) Then
-            If WeekTemperatureOne < -50 Or WeekTemperatureOne > 130 Then
-                Status.Text = "Temperature out of range in Week #1"
-                TemperatureOneInput.Focus()
-                TemperatureOneInput.SelectionStart = 0
-                TemperatureOneInput.SelectionLength = TemperatureOneInput.Text.Length
-            Else
-                WeekAverageTemperature = WeekAverageTemperature + WeekTemperatureOne
-                Status.Text = String.Empty ' clear any error in the status bar
-                ' week two start
-                If Single.TryParse(TemperatureTwoInput.Text, WeekTemperatureTwo) Then
-                    If WeekTemperatureTwo < -50 Or WeekTemperatureTwo > 130 Then
-                        Status.Text = "Temperature out of range in Week #2"
-                        TemperatureTwoInput.Focus()
-                        TemperatureTwoInput.SelectionStart = 0
-                        TemperatureTwoInput.SelectionLength = TemperatureTwoInput.Text.Length
-                    Else
-                        WeekAverageTemperature = WeekAverageTemperature + WeekTemperatureTwo
-                        Status.Text = String.Empty ' clear any error in the status bar
-                        'week three start
-                        If Single.TryParse(TemperatureThreeInput.Text, WeekTemperatureThree) Then
-                            If WeekTemperatureThree < -50 Or WeekTemperatureThree > 130 Then
-                                Status.Text = "Temperature out of range in Week #3"
-                                TemperatureThreeInput.Focus()
-                                TemperatureThreeInput.SelectionStart = 0
-                                TemperatureThreeInput.SelectionLength = TemperatureThreeInput.Text.Length
-                            Else
-                                WeekAverageTemperature = WeekAverageTemperature + WeekTemperatureThree
-                                Status.Text = String.Empty ' clear any error in the status bar
-                                'week four start
-                                If Single.TryParse(TemperatureFourInput.Text, WeekTemperatureFour) Then
-                                    If WeekTemperatureFour < -50 Or WeekTemperatureFour > 130 Then
-                                        Status.Text = "Temperature out of range in Week #1"
-                                        TemperatureFourInput.Focus()
-                                        TemperatureFourInput.SelectionStart = 0
-                                        TemperatureFourInput.SelectionLength = TemperatureFourInput.Text.Length
-                                    Else
-                                        WeekAverageTemperature = WeekAverageTemperature + WeekTemperatureFour
-                                        Status.Text = String.Empty ' clear any error in the status bar
-                                        'week five start
-                                        If Single.TryParse(TemperatureFiveInput.Text, WeekTemperatureFive) Then
-                                            If WeekTemperatureFive < -50 Or WeekTemperatureFive > 130 Then
-                                                Status.Text = "Temperature out of range in Week #5"
-                                                TemperatureFiveInput.Focus()
-                                                TemperatureFiveInput.SelectionStart = 0
-                                                TemperatureFiveInput.SelectionLength = TemperatureFiveInput.Text.Length
-                                            Else
-                                                WeekAverageTemperature = WeekAverageTemperature + WeekTemperatureFive
-                                                Status.Text = String.Empty ' clear any error in the status bar
-                                                ' calculate average
-                                                WeekAverageTemperature = WeekAverageTemperature / NUMBER_OF_TEMPERATURES
-                                                ' display result
-                                                AverageTemperatureOutput.Text = Convert.ToString(WeekAverageTemperature)
-                                            End If ' week five range end
+        ' define myError 
+        Dim myError1 As Boolean = False
+        Dim myError2 As Boolean = False
+        Dim myError3 As Boolean = False
+        Dim myError4 As Boolean = False
+        Dim myError5 As Boolean = False
 
-                                        Else
-                                            TemperatureFiveInput.Focus()
-                                            TemperatureFiveInput.SelectionStart = 0
-                                            TemperatureFiveInput.SelectionLength = TemperatureFiveInput.Text.Length
-                                            Status.Text = "You must enter a numeric value in Week #5"
+        myError1 = ValidateInput(TemperatureOneInput, WeekTemperatureOne, WeekAverageTemperature)
+        myError2 = ValidateInput(TemperatureTwoInput, WeekTemperatureTwo, WeekAverageTemperature)
+        myError3 = ValidateInput(TemperatureThreeInput, WeekTemperatureThree, WeekAverageTemperature)
+        myError4 = ValidateInput(TemperatureFourInput, WeekTemperatureFour, WeekAverageTemperature)
+        myError5 = ValidateInput(TemperatureFiveInput, WeekTemperatureFive, WeekAverageTemperature)
 
-
-                                        End If ' end of week 5
-                                    End If ' week four range end
-
-                                Else
-                                    TemperatureFourInput.Focus()
-                                    TemperatureFourInput.SelectionStart = 0
-                                    TemperatureFourInput.SelectionLength = TemperatureFourInput.Text.Length
-                                    Status.Text = "You must enter a numeric value in Week #4"
-
-
-                                End If ' end of week 4
-                            End If ' week three range end
-
-                        Else
-                            TemperatureThreeInput.Focus()
-                            TemperatureThreeInput.SelectionStart = 0
-                            TemperatureThreeInput.SelectionLength = TemperatureThreeInput.Text.Length
-                            Status.Text = "You must enter a numeric value in Week #3"
-
-
-                        End If ' end of week 3
-                    End If ' week two range end
-
-                Else
-                    TemperatureTwoInput.Focus()
-                    TemperatureTwoInput.SelectionStart = 0
-                    TemperatureTwoInput.SelectionLength = TemperatureTwoInput.Text.Length
-                    Status.Text = "You must enter a numeric value in Week #2"
-
-
-                End If ' end of week 2
-
-            End If ' week one range end
-
-        Else
-                TemperatureOneInput.Focus()
-                TemperatureOneInput.SelectionStart = 0
-                TemperatureOneInput.SelectionLength = TemperatureOneInput.Text.Length
-                Status.Text = "You must enter a numeric value in Week #1"
-
-
-        End If ' end of week 1
-
-
-
-
+        If Not myError1 And Not myError2 And Not myError3 And Not myError4 And Not myError5 Then
+            WeekAverageTemperature = WeekAverageTemperature / NUMBER_OF_TEMPERATURES
+            AverageTemperatureOutput.Text = WeekAverageTemperature.ToString()
+        End If
 
     End Sub
 
@@ -133,7 +39,7 @@
         TemperatureThreeInput.Clear()
         TemperatureFourInput.Clear()
         TemperatureFiveInput.Clear()
-        Status.Text = String.Empty ' clear any error in the status bar
+
         AverageTemperatureOutput.Text = String.Empty
 
         ' set focus to the first Weekly Temp after clearing the form
@@ -150,4 +56,28 @@
         ' put the focus in the Week one temperature text box when loading the form
         TemperatureOneInput.Focus()
     End Sub
+
+    Private Function ValidateInput(ByVal inputTemperature As TextBox, ByVal ThisWeeksTemperature As Single, ByRef WeekAverageTemperature As Single) As Boolean
+        ' convert inputs to double
+        ' Clear previous errors
+        ErrorProvider1.SetError(inputTemperature, String.Empty)
+        Dim foundError As Boolean = False
+
+        If Single.TryParse(inputTemperature.Text, ThisWeeksTemperature) Then
+            If ThisWeeksTemperature < -50 Or ThisWeeksTemperature > 130 Then
+                ErrorProvider1.SetError(inputTemperature, "Temperture must be between -50 and 130.")
+                inputTemperature.Focus()
+                inputTemperature.SelectionStart = 0
+                inputTemperature.SelectionLength = TemperatureOneInput.Text.Length
+                foundError = True
+                Return foundError
+            Else
+                WeekAverageTemperature = WeekAverageTemperature + ThisWeeksTemperature
+            End If ' end of week 1
+        Else
+            ErrorProvider1.SetError(inputTemperature, "You must input a numeric value.")
+            foundError = True
+            Return foundError
+        End If
+    End Function
 End Class

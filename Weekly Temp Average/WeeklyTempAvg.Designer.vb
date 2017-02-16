@@ -22,6 +22,7 @@ Partial Class WeeklyTempAvg
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TemperatureOneInput = New System.Windows.Forms.TextBox()
         Me.TemperatureTwoInput = New System.Windows.Forms.TextBox()
@@ -37,9 +38,8 @@ Partial Class WeeklyTempAvg
         Me.CalcAvgButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Status = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.StatusStrip1.SuspendLayout()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -181,27 +181,15 @@ Partial Class WeeklyTempAvg
         Me.ExitButton.Text = "E&xit"
         Me.ExitButton.UseVisualStyleBackColor = True
         '
-        'StatusStrip1
+        'ErrorProvider1
         '
-        Me.StatusStrip1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Status})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 291)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(342, 22)
-        Me.StatusStrip1.TabIndex = 15
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Status
-        '
-        Me.Status.Name = "Status"
-        Me.Status.Size = New System.Drawing.Size(0, 17)
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'WeeklyTempAvg
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(342, 313)
-        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.CalcAvgButton)
@@ -220,8 +208,7 @@ Partial Class WeeklyTempAvg
         Me.Name = "WeeklyTempAvg"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Weekly Temperature Average"
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -241,7 +228,5 @@ Partial Class WeeklyTempAvg
     Friend WithEvents CalcAvgButton As System.Windows.Forms.Button
     Friend WithEvents ClearButton As System.Windows.Forms.Button
     Friend WithEvents ExitButton As System.Windows.Forms.Button
-    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
-    Friend WithEvents Status As System.Windows.Forms.ToolStripStatusLabel
-
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class
