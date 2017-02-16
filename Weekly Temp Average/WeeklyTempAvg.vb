@@ -4,7 +4,7 @@
         ' Declare the constant for averaging. we are averaging five weekly temperatures
         Const NUMBER_OF_TEMPERATURES As Integer = 5
 
-        ' Declare the constant for low limit
+        ' Declare the constant for low limit of the temperature
         Const LOW_LIMIT As Single = -50.0
 
         ' Declare the constant for high limit
@@ -20,22 +20,22 @@
 
         Dim WeekAverageTemperature As Single = 0.0 ' an accumulator for the weekly temperatures
 
-        ' define myError for each week
-        Dim myError1 As Boolean = False
-        Dim myError2 As Boolean = False
-        Dim myError3 As Boolean = False
-        Dim myError4 As Boolean = False
-        Dim myError5 As Boolean = False
+        ' define inputError for each week
+        Dim inputError1 As Boolean = False
+        Dim inputError2 As Boolean = False
+        Dim inputError3 As Boolean = False
+        Dim inputError4 As Boolean = False
+        Dim inputError5 As Boolean = False
 
         ' call the function for each week
-        myError1 = ValidateInput(TemperatureOneInput, WeekTemperatureOne, HIGH_LIMIT, LOW_LIMIT)
-        myError2 = ValidateInput(TemperatureTwoInput, WeekTemperatureTwo, HIGH_LIMIT, LOW_LIMIT)
-        myError3 = ValidateInput(TemperatureThreeInput, WeekTemperatureThree, HIGH_LIMIT, LOW_LIMIT)
-        myError4 = ValidateInput(TemperatureFourInput, WeekTemperatureFour, HIGH_LIMIT, LOW_LIMIT)
-        myError5 = ValidateInput(TemperatureFiveInput, WeekTemperatureFive, HIGH_LIMIT, LOW_LIMIT)
+        inputError1 = ValidateInput(TemperatureOneInput, WeekTemperatureOne, HIGH_LIMIT, LOW_LIMIT)
+        inputError2 = ValidateInput(TemperatureTwoInput, WeekTemperatureTwo, HIGH_LIMIT, LOW_LIMIT)
+        inputError3 = ValidateInput(TemperatureThreeInput, WeekTemperatureThree, HIGH_LIMIT, LOW_LIMIT)
+        inputError4 = ValidateInput(TemperatureFourInput, WeekTemperatureFour, HIGH_LIMIT, LOW_LIMIT)
+        inputError5 = ValidateInput(TemperatureFiveInput, WeekTemperatureFive, HIGH_LIMIT, LOW_LIMIT)
 
         ' if we find an error in any of the inputs do not output an average
-        If Not myError1 And Not myError2 And Not myError3 And Not myError4 And Not myError5 Then
+        If Not inputError1 And Not inputError2 And Not inputError3 And Not inputError4 And Not inputError5 Then
             WeekAverageTemperature = WeekTemperatureOne + WeekTemperatureTwo + WeekTemperatureThree + WeekTemperatureFour + WeekTemperatureFive
             WeekAverageTemperature = WeekAverageTemperature / NUMBER_OF_TEMPERATURES
             AverageTemperatureOutput.Text = WeekAverageTemperature.ToString()
