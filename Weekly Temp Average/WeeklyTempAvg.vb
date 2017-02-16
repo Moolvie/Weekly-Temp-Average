@@ -1,9 +1,12 @@
 ﻿Public Class WeeklyTempAvg
     Private Sub CalcAvgButton_Click(sender As Object, e As EventArgs) Handles CalcAvgButton.Click
+
         ' Declare the constant for averaging. we are averaging five weekly temperatures
         Const NUMBER_OF_TEMPERATURES As Integer = 5
+
         ' Declare the constant for low limit
         Const LOW_LIMIT As Single = -50.0
+
         ' Declare the constant for high limit
         Const HIGH_LIMIT As Single = 130.0
 
@@ -14,7 +17,8 @@
         Dim WeekTemperatureThree As Single = 0.0
         Dim WeekTemperatureFour As Single = 0.0
         Dim WeekTemperatureFive As Single = 0.0
-        Dim WeekAverageTemperature As Single = 0.0
+
+        Dim WeekAverageTemperature As Single = 0.0 ' an accumulator for the weekly temperatures
 
         ' define myError for each week
         Dim myError1 As Boolean = False
@@ -24,13 +28,15 @@
         Dim myError5 As Boolean = False
 
         ' call the function for each week
-        myError1 = ValidateInput(TemperatureOneInput, WeekTemperatureOne, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
-        myError2 = ValidateInput(TemperatureTwoInput, WeekTemperatureTwo, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
-        myError3 = ValidateInput(TemperatureThreeInput, WeekTemperatureThree, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
-        myError4 = ValidateInput(TemperatureFourInput, WeekTemperatureFour, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
-        myError5 = ValidateInput(TemperatureFiveInput, WeekTemperatureFive, HIGH_LIMIT, LOW_LIMIT, WeekAverageTemperature)
+        myError1 = ValidateInput(TemperatureOneInput, WeekTemperatureOne, HIGH_LIMIT, LOW_LIMIT)
+        myError2 = ValidateInput(TemperatureTwoInput, WeekTemperatureTwo, HIGH_LIMIT, LOW_LIMIT)
+        myError3 = ValidateInput(TemperatureThreeInput, WeekTemperatureThree, HIGH_LIMIT, LOW_LIMIT)
+        myError4 = ValidateInput(TemperatureFourInput, WeekTemperatureFour, HIGH_LIMIT, LOW_LIMIT)
+        myError5 = ValidateInput(TemperatureFiveInput, WeekTemperatureFive, HIGH_LIMIT, LOW_LIMIT)
 
+        ' if we find an error in any of the inputs do not output an average
         If Not myError1 And Not myError2 And Not myError3 And Not myError4 And Not myError5 Then
+            WeekAverageTemperature = WeekTemperatureOne + WeekTemperatureTwo + WeekTemperatureThree + WeekTemperatureFour + WeekTemperatureFive
             WeekAverageTemperature = WeekAverageTemperature / NUMBER_OF_TEMPERATURES
             AverageTemperatureOutput.Text = WeekAverageTemperature.ToString()
         End If
@@ -39,6 +45,7 @@
 
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+
         ' clear all the text boxes for another set of Weekly temps
         TemperatureOneInput.Clear()
         TemperatureTwoInput.Clear()
@@ -63,30 +70,37 @@
         TemperatureOneInput.Focus()
     End Sub
 
-    Private Function ValidateInput(ByVal inputTemperature As TextBox, ByVal ThisWeeksTemperature As Single, ByVal high As Single, ByVal low As Single, ByRef WeekAverageTemperature As Single) As Boolean
+    Function ValidateInput(ByVal inputText As TextBox, ByRef InputNumber As Single, ByVal HIGH As Single, ByVal LOW As Single) As Boolean
+        ' This function validates the value entered into a textbox.
+        ' The value must be an single precision floating point number between the range of LOW and HIGH
+        ' if the value is not, an error icon with message is displayed next to the input box, alerting the user 
+        ' that the value is incorrect and in what manner, non-numeric or out of range.
+        ' The function expects the name of the textbox, the variable in which the number will be stored, The LOW limit,
+        ' and the HIGH limit.
+        '
+        ' if the value is correct it is stored in the variable passed by reference and the function returns true.
+        ' otherwise the function returns false.
 
         ' Clear previous errors
-        ErrorProvider1.SetError(inputTemperature, String.Empty)
+        ErrorProvider1.SetError(inputText, String.Empty)
+
         ' set return value to false
         Dim foundError As Boolean = False
 
-        ' validate input, must be a number between -50 and 130
-        If Single.TryParse(inputTemperature.Text, ThisWeeksTemperature) Then
-            If ThisWeeksTemperature < low Or ThisWeeksTemperature > high Then
-                ErrorProvider1.SetError(inputTemperature, "Temperture must be between" + low.ToString() + " and " + high.ToString() + ".")
-                inputTemperature.Focus()
-                inputTemperature.SelectionStart = 0
-                inputTemperature.SelectionLength = TemperatureOneInput.Text.Length
+        ' validate input, must be a number between LOW and HIGH
+        If Single.TryParse(inputText.Text, InputNumber) Then
+            If InputNumber < LOW Or InputNumber > HIGH Then
+                ErrorProvider1.SetError(inputText, "Value must be between" + LOW.ToString() + " and " + HIGH.ToString() + ".")
+                ' if we are here we found an error
                 foundError = True
                 Return foundError ' return an error if not in range
-            Else
-                ' input is correct so add to accumulator
-                WeekAverageTemperature = WeekAverageTemperature + ThisWeeksTemperature
             End If ' end inner if
         Else
-            ErrorProvider1.SetError(inputTemperature, "You must input a numeric value.")
+            ErrorProvider1.SetError(inputText, "You must input a numeric value.")
             foundError = True
             Return foundError ' return an error if not a number
         End If 'end outer if
+        ' we get here it is all good and we didn't find anything(actually I don't think we can get here)
+        Return foundError
     End Function
 End Class
