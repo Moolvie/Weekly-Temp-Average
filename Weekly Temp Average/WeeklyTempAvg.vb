@@ -93,11 +93,13 @@
                 ErrorProvider1.SetError(inputText, "Value must be between" + LOW.ToString() + " and " + HIGH.ToString() + ".")
                 ' if we are here we found an error
                 foundError = True
+                inputText.Focus()
                 Return foundError ' return an error if not in range
             End If ' end inner if
         Else
             ErrorProvider1.SetError(inputText, "You must input a numeric value.")
             foundError = True
+            inputText.Focus()
             Return foundError ' return an error if not a number
         End If 'end outer if
         ' we get here it is all good and we didn't find anything(actually I don't think we can get here)
